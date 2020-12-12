@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyAnimeList</string>
+    <string name="anime_name">Anime Name</string>
+    <string name="detail">Detail</string>
+</resources>
