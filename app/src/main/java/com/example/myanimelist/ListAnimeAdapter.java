@@ -1,7 +1,9 @@
 package com.example.myanimelist;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +18,16 @@ import com.bumptech.glide.request.RequestOptions;
 
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.ListViewHolder> {
-
     private ArrayList<Anime> listAnime;
+    private OnItemClickCallback onItemClickCallback;
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
 
     public ListAnimeAdapter(ArrayList<Anime> list){
         this.listAnime = list;
@@ -34,7 +41,7 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListAnimeAdapter.ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ListAnimeAdapter.ListViewHolder holder, int position) {
         Anime anime = listAnime.get(position);
         Glide.with(holder.itemView.getContext())
                 .load(anime.getPhoto())
@@ -42,11 +49,23 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
                 .into(holder.imgPhoto);
         holder.tvName.setText(anime.getName());
         holder.tvDetail.setText(anime.getDetail());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(listAnime.get(holder.getAdapterPosition()));
+
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return listAnime.size();
+    }
+
+    public interface OnItemClickCallback {
+        void onItemClicked(Anime data);
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -62,9 +81,7 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
 
         @Override
         public void onClick(View v) {
-            val detailIntent = Intent(this@MainActivity, DetailActivity::class.java);
-            detailIntent.putExtra(DetailActivity.list);
-            startActivity(detailIntent);
+            Intent intent = new Intent (v.getContext(), DetailActivity.class);
         }
     }
 }

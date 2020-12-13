@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,5 +30,16 @@ public class MainActivity extends AppCompatActivity {
         rvAnime.setLayoutManager(new LinearLayoutManager(this));
         ListAnimeAdapter listHeroAdapter = new ListAnimeAdapter(list);
         rvAnime.setAdapter(listHeroAdapter);
+
+        listHeroAdapter.setOnItemClickCallback(new ListAnimeAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Anime data) {
+                showSelectedHero(data);
+            }
+        });
+    }
+
+    private void showSelectedHero(Anime anime) {
+        Toast.makeText(this, "Kamu memilih " + anime.getName(), Toast.LENGTH_SHORT).show();
     }
 }

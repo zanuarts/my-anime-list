@@ -2,4 +2,5 @@
     <string name="app_name">MyAnimeList</string>
     <string name="anime_name">Anime Name</string>
     <string name="detail">Detail</string>
+    <string name="data_received">Data received</string>
 </resources>
