@@ -68,7 +68,7 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
         void onItemClicked(Anime data);
     }
 
-    public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
         TextView tvName, tvDetail;
 
@@ -79,9 +79,9 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
             tvDetail = itemView.findViewById(R.id.tv_item_detail);
         }
 
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent (v.getContext(), DetailActivity.class);
-        }
+//        @Override
+//        public void onClick(View v) {
+//            Intent intent = new Intent (v.getContext(), DetailActivity.class);
+//        }
     }
 }
