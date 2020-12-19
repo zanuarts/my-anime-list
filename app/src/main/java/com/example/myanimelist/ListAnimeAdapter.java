@@ -43,10 +43,12 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
     @Override
     public void onBindViewHolder(@NonNull final ListAnimeAdapter.ListViewHolder holder, int position) {
         Anime anime = listAnime.get(position);
+
         Glide.with(holder.itemView.getContext())
                 .load(anime.getPhoto())
                 .apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPhoto);
+
         holder.tvName.setText(anime.getName());
         holder.tvDetail.setText(anime.getDetail());
 
@@ -54,7 +56,6 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
             @Override
             public void onClick(View v) {
                 onItemClickCallback.onItemClicked(listAnime.get(holder.getAdapterPosition()));
-
             }
         });
     }
@@ -78,10 +79,6 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
             tvName = itemView.findViewById(R.id.tv_item_name);
             tvDetail = itemView.findViewById(R.id.tv_item_detail);
         }
-
-//        @Override
-//        public void onClick(View v) {
-//            Intent intent = new Intent (v.getContext(), DetailActivity.class);
-//        }
     }
+
 }
