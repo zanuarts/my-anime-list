@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSelectedHero(Anime anime) {
-        Toast.makeText(this, "Kamu memilih " + anime.getAnimeNames(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
         intent.putExtra("animeImages", anime.getAnimeImages());
         intent.putExtra("animeNames", anime.getAnimeNames());

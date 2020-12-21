@@ -24,17 +24,21 @@
             android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:textSize="16sp"
             android:textStyle="bold"
             tools:text="@string/anime_name" />
         <TextView
-            android:id="@+id/tv_item_detail"
+            android:id="@+id/tv_item_score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="2"
-            tools:text="@string/detail" />
+            tools:text="@string/score" />
+        <TextView
+            android:id="@+id/tv_item_eps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            tools:text="@string/episode" />
     </LinearLayout>
 
 </LinearLayout>

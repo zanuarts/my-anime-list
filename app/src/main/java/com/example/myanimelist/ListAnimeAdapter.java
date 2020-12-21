@@ -50,7 +50,8 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
                 .into(holder.imgPhoto);
 
         holder.tvName.setText(anime.getAnimeNames());
-        holder.tvDetail.setText(anime.getAnimeDetails());
+        holder.tvScore.setText(anime.getAnimeScore());
+        holder.tvEps.setText(anime.getAnimeEps());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,13 +72,14 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView tvName, tvDetail;
+        TextView tvName, tvScore, tvEps;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             tvName = itemView.findViewById(R.id.tv_item_name);
-            tvDetail = itemView.findViewById(R.id.tv_item_detail);
+            tvScore = itemView.findViewById(R.id.tv_item_score);
+            tvEps = itemView.findViewById(R.id.tv_item_eps);
         }
     }
 
