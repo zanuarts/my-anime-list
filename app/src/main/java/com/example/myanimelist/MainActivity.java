@@ -61,11 +61,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSelectedHero(Anime anime) {
-        Toast.makeText(this, "Kamu memilih " + anime.getName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Kamu memilih " + anime.getAnimeNames(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-        intent.putExtra("photo", anime.getPhoto());
-        intent.putExtra("name", anime.getName());
-        intent.putExtra("detail", anime.getDetail());
+        intent.putExtra("animeImages", anime.getAnimeImages());
+        intent.putExtra("animeNames", anime.getAnimeNames());
+        intent.putExtra("animeDetails", anime.getAnimeDetails());
+        intent.putExtra("animeScore", anime.getAnimeScore());
+        intent.putExtra("animeEps", anime.getAnimeEps());
+        intent.putExtra("animeProds", anime.getAnimeProds());
+        intent.putExtra("animeGenre", anime.getAnimeGenre());
         this.startActivity(intent);
     }
 }

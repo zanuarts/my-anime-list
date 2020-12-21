@@ -6,4 +6,9 @@
     <string name="about">About</string>
     <string name="name">Zanuar Ekaputra</string>
     <string name="email">zanuar.er@gmail.com</string>
+    <string name="episode">Episode</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="producer">Producer</string>
+    <string name="score">Score</string>
+    <string name="genre">Genre</string>
 </resources>
