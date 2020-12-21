@@ -1,31 +1,68 @@
 package com.example.myanimelist;
 
 public class Anime {
-    private String name;
-    private String detail;
-    private int photo;
+    private String animeNames;
+    private String animeDetails;
+    private String animeScore;
+    private String animeProds;
+    private String animeEps;
+    private String animeGenre;
+    private int animeImages;
 
-    public String getDetail() {
-        return detail;
+
+    public String getAnimeNames() {
+        return animeNames;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setAnimeNames(String animeNames) {
+        this.animeNames = animeNames;
     }
 
-    public String getName() {
-        return name;
+    public String getAnimeDetails() {
+        return animeDetails;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAnimeDetails(String animeDetails) {
+        this.animeDetails = animeDetails;
     }
 
-    public int getPhoto() {
-        return photo;
+    public String getAnimeScore() {
+        return animeScore;
     }
 
-    public void setPhoto(int photo) {
-        this.photo = photo;
+    public void setAnimeScore(String animeScore) {
+        this.animeScore = animeScore;
+    }
+
+    public String getAnimeProds() {
+        return animeProds;
+    }
+
+    public void setAnimeProds(String animeProds) {
+        this.animeProds = animeProds;
+    }
+
+    public String getAnimeEps() {
+        return animeEps;
+    }
+
+    public void setAnimeEps(String animeEps) {
+        this.animeEps = animeEps;
+    }
+
+    public String getAnimeGenre() {
+        return animeGenre;
+    }
+
+    public void setAnimeGenre(String animeGenre) {
+        this.animeGenre = animeGenre;
+    }
+
+    public int getAnimeImages() {
+        return animeImages;
+    }
+
+    public void setAnimeImages(int animeImages) {
+        this.animeImages = animeImages;
     }
 }

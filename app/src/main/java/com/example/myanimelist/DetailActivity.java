@@ -25,7 +25,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView detail = findViewById(R.id.detail);
         ImageView imgDataReceived = findViewById(R.id.img_data_received);
 
-        imgDataReceived.setImageResource(getIntent().getIntExtra("photo", animeImages));
+        imgDataReceived.setImageResource(getIntent().getIntExtra("animeImages", animeImages));
         title.setText(getIntent().getStringExtra(animeName));
         detail.setText(getIntent().getStringExtra(animeDetail));
     }

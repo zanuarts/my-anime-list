@@ -45,12 +45,12 @@ public class ListAnimeAdapter extends RecyclerView.Adapter<ListAnimeAdapter.List
         Anime anime = listAnime.get(position);
 
         Glide.with(holder.itemView.getContext())
-                .load(anime.getPhoto())
+                .load(anime.getAnimeImages())
                 .apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPhoto);
 
-        holder.tvName.setText(anime.getName());
-        holder.tvDetail.setText(anime.getDetail());
+        holder.tvName.setText(anime.getAnimeNames());
+        holder.tvDetail.setText(anime.getAnimeDetails());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

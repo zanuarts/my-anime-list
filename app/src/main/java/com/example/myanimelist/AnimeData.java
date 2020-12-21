@@ -62,6 +62,58 @@ public class AnimeData {
 
     };
 
+    private static String[] animeScore = {
+            "9.21",
+            "9.12",
+            "9.11",
+            "9.11",
+            "9.08",
+            "9.08",
+            "9.08",
+            "9.06",
+            "9.04",
+            "9.01"
+    };
+
+    private static String[] animeEps = {
+            "TV (64 eps)",
+            "TV (24 eps)",
+            "TV (51 eps)",
+            "TV (148 eps)",
+            "OVA (110 eps)",
+            "TV (51 eps)",
+            "TV (10 eps)",
+            "TV (16 eps)",
+            "TV (13 eps)",
+            "TV (22 eps)"
+    };
+
+    private static String[] animeProds = {
+            "Aniplex, Square Enix, Mainichi Broadcasting System, Studio Moriken",
+            "Frontier Works, Media Factory, Movic, AT-X, Kadokawa Pictures Japan, Nitroplus",
+            "TV Tokyo, Aniplex, Dentsu",
+            "VAP, Nippon Television Network, Shueisha",
+            "Kitty Films, K-Factory",
+            "TV Tokyo, Aniplex, Dentsu, Trinity Sound, Miracle Robo, Studio Jack, Shueisha",
+            "Production I.G, Dentsu, Mainichi Broadcasting System, Pony Canyon, Kodansha, Techno Sound, Pony Canyon Enterprise",
+            "Production I.G, Dentsu, Mainichi Broadcasting System, Pony Canyon, Kodansha, Techno Sound, Pony Canyon Enterprise",
+            "TV Tokyo, Aniplex, Dentsu, Shueisha, Miracle Bus",
+            "Aniplex, Dentsu, NHK, Hakusensha, Asmik Ace, Toy's Factory"
+    };
+
+    private static String[] animeGenre = {
+            "Action, Military, Adventure, Comedy, Drama, Magic, Fantasy, Shounen",
+            "Thriller, Sci-Fi",
+            "Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen",
+            "Action, Adventure, Fantasy, Shounen, Super Power",
+            "Military, Sci-Fi, Space, Drama",
+            "Action, Sci-Fi, Comedy, Historical, Parody, Samurai, Shounen",
+            "Action, Military, Mystery, Super Power, Drama, Fantasy, Shounen",
+            "Action, Military, Mystery, Super Power, Drama, Fantasy, Shounen",
+            "Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen",
+            "Drama, Game, Seinen, Slice of Life"
+    };
+
     private static int[] animeImages = {
             R.drawable.fullmetal,
             R.drawable.steins_gate,
@@ -79,9 +131,13 @@ public class AnimeData {
         ArrayList<Anime> list = new ArrayList<>();
         for (int position = 0; position < animeNames.length; position++) {
             Anime anime = new Anime();
-            anime.setName(animeNames[position]);
-            anime.setDetail(animeDetails[position]);
-            anime.setPhoto(animeImages[position]);
+            anime.setAnimeNames(animeNames[position]);
+            anime.setAnimeDetails(animeDetails[position]);
+            anime.setAnimeEps(animeEps[position]);
+            anime.setAnimeGenre(animeGenre[position]);
+            anime.setAnimeProds(animeProds[position]);
+            anime.setAnimeScore(animeScore[position]);
+            anime.setAnimeImages(animeImages[position]);
             list.add(anime);
         }
         return list;
