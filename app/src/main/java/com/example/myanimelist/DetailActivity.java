@@ -21,17 +21,12 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        TextView tvDataReceived = findViewById(R.id.tv_data_received);
+        TextView title = findViewById(R.id.title);
+        TextView detail = findViewById(R.id.detail);
         ImageView imgDataReceived = findViewById(R.id.img_data_received);
 
-        int img = getIntent().getIntExtra("photo", animeImages);
-        String name = getIntent().getStringExtra(animeName);
-        String detail= getIntent().getStringExtra(animeDetail);
-
-        Log.d("photo", String.valueOf(img));
-        String text = "Name : " + name + ",\nDetail : \n" + detail;
-
-        imgDataReceived.setImageResource(img);
-        tvDataReceived.setText(text);
+        imgDataReceived.setImageResource(getIntent().getIntExtra("photo", animeImages));
+        title.setText(getIntent().getStringExtra(animeName));
+        detail.setText(getIntent().getStringExtra(animeDetail));
     }
 }

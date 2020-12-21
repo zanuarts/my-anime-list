@@ -3,4 +3,7 @@
     <string name="anime_name">Anime Name</string>
     <string name="detail">Detail</string>
     <string name="data_received">Data received</string>
+    <string name="about">About</string>
+    <string name="name">Zanuar Ekaputra</string>
+    <string name="email">zanuar.er@gmail.com</string>
 </resources>
